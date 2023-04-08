@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: api
+    depends_on:
+      - cass1
+    networks:
+      - default
+    ports:
+    - "8080:8081"

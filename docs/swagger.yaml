@@ -18,6 +18,7 @@ info:
   description: Todo API built using Go and Gin with DDD. You can visit the GitHub
     repository at https://github.com/daran9/todo-api-go
   license:
+    name: MIT
     url: https://opensource.org/licenses/MIT
   title: Todo API
   version: "1.0"
