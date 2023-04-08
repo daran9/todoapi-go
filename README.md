@@ -33,6 +33,12 @@ To build the app with docker, run
 
 `docker run -d -p 8080:80 --name todoapiapp todoapi`
 
+`./run.sh`
+
+
+`docker exec cass1 nodetool status`
+
+`docker exec -it cass1  cqlsh  -e "describe keyspaces"`
 
 ## Mocks
 

@@ -1,0 +1,55 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: api
+    depends_on:
+      - cass1
+    networks:
+      - default
+    ports:
+    - "8080:8081"
+  
+  cass1:
+    image: cassandra:4.0
+    restart: always
+    ports:
+      - "9042:9042"
+    container_name: cass1
+    volumes:
+      - ./data/cass1:/var/lib/cassandra
+    environment:
+      - "CASSANDRA_SEEDS=cass1,cass2"
+
+  cass2:
+    image: cassandra:4.0
+    restart: always
+    ports:
+      - "9043:9042"
+    container_name: cass2
+    volumes:
+      - ./data/cass2:/var/lib/cassandra
+    environment:
+      - "CASSANDRA_SEEDS=cass1,cass2"
+    depends_on:
+      - cass1
+
+  cass3:
+    image: cassandra:4.0
+    restart: always
+    ports:
+      - "9044:9042"
+    container_name: cass3
+    volumes:
+      - ./data/cass3:/var/lib/cassandra
+    environment:
+      - "CASSANDRA_SEEDS=cass1,cass2"
+    depends_on:
+      - cass2
+
+networks:
+  default:
+    driver: bridge

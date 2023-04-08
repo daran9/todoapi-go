@@ -4,7 +4,7 @@ import (
 	"todoApi-go/pkg/controllers"
 	"todoApi-go/pkg/controllers/task"
 	task_domain "todoApi-go/pkg/domain/task"
-	"todoApi-go/pkg/infrastructure/memory"
+	"todoApi-go/pkg/infrastructure/cassandra"
 )
 
 // @title 		Todo API
@@ -23,7 +23,8 @@ import (
 // @query.collection.format multi
 func main() {
 
-	taskRepository := memory.NewTaskRepository()
+	//taskRepository := memory.NewTaskRepository()
+	taskRepository := cassandra.NewTaskRepository("cass1")
 	taskService := task_domain.NewAddTaskService(taskRepository)
 	taskController := task.NewTaskController(taskService)
 
