@@ -8,7 +8,7 @@ DDD(Domain-Driven Design) with hexagonal architecture in Golang and Gin.
 ## Persistence
 
 1. Using In-Memory
-1. Cassandra (Todo)
+1. MongoDB (Todo)
 
 ## Requirements
 
@@ -32,6 +32,7 @@ To build the app with docker, run
 `docker build -t todoapi .`
 
 `docker run -d -p 8080:80 --name todoapiapp todoapi`
+
 
 
 ## Mocks

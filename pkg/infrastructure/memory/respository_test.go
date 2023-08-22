@@ -10,11 +10,12 @@ import (
 )
 
 func TestTaskRepository_AddTask(t *testing.T) {
-	repo := NewTaskRepository()
+	repo := NewInMemoryTaskRepository()
 
 	// Create a new Task
 	task := task.Task{
-		Title: "title",
+		Title: "addTask",
+		Id:    uuid.New(),
 	}
 
 	err := repo.AddTask(task)
@@ -26,11 +27,12 @@ func TestTaskRepository_AddTask(t *testing.T) {
 }
 
 func TestTaskRepository_GetTask(t *testing.T) {
-	repo := NewTaskRepository()
+	repo := NewInMemoryTaskRepository()
 
 	// Create a new Task
 	expectedTask := task.Task{
-		Title: "title",
+		Title: "getTask",
+		Id:    uuid.New(),
 	}
 
 	err := repo.AddTask(expectedTask)
@@ -70,11 +72,12 @@ func TestTaskRepository_GetTask(t *testing.T) {
 }
 
 func TestTaskRepository_GetAllTasks(t *testing.T) {
-	repo := NewTaskRepository()
+	repo := NewInMemoryTaskRepository()
 
 	// Create a new Task
 	task := task.Task{
-		Title: "title",
+		Title: "getAllTasks",
+		Id:    uuid.New(),
 	}
 
 	err := repo.AddTask(task)

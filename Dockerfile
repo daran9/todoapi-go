@@ -14,6 +14,7 @@ RUN go mod download
 # https://docs.docker.com/engine/reference/builder/#copy
 COPY cmd/ ./cmd/
 COPY pkg/ ./pkg/
+COPY docs/ ./docs/
 
 # Build
 RUN go build -o /todoapi ./cmd/todo-server/main.go

@@ -1,6 +1,6 @@
 basePath: /api/v1
 definitions:
-  task.Task:
+  todoApi-go_pkg_domain_task.Task:
     properties:
       completed:
         type: boolean
@@ -32,7 +32,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/task.Task'
+            $ref: '#/definitions/todoApi-go_pkg_domain_task.Task'
       summary: get all items in the task list
     post:
       operationId: create-task
@@ -42,14 +42,14 @@ paths:
         name: data
         required: true
         schema:
-          $ref: '#/definitions/task.Task'
+          $ref: '#/definitions/todoApi-go_pkg_domain_task.Task'
       produces:
       - application/json
       responses:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/task.Task'
+            $ref: '#/definitions/todoApi-go_pkg_domain_task.Task'
         "400":
           description: Bad Request
           schema:
@@ -70,7 +70,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/task.Task'
+            $ref: '#/definitions/todoApi-go_pkg_domain_task.Task'
         "404":
           description: Not Found
           schema:

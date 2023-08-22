@@ -8,17 +8,11 @@ type TaskService interface {
 	GetTask(uuid.UUID) (Task, error)
 }
 
-type AddTaskRepository interface {
-	AddTask(Task) error
-	GetAllTasks() ([]Task, error)
-	GetTask(uuid.UUID) (Task, error)
-}
-
 type taskService struct {
-	r AddTaskRepository
+	r TaskRepository
 }
 
-func NewAddTaskService(r AddTaskRepository) TaskService {
+func NewAddTaskService(r TaskRepository) TaskService {
 	return &taskService{r}
 }
 

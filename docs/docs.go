@@ -35,7 +35,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/task.Task"
+                            "$ref": "#/definitions/todoApi-go_pkg_domain_task.Task"
                         }
                     }
                 }
@@ -53,7 +53,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/task.Task"
+                            "$ref": "#/definitions/todoApi-go_pkg_domain_task.Task"
                         }
                     }
                 ],
@@ -61,7 +61,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/task.Task"
+                            "$ref": "#/definitions/todoApi-go_pkg_domain_task.Task"
                         }
                     },
                     "400": {
@@ -93,7 +93,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/task.Task"
+                            "$ref": "#/definitions/todoApi-go_pkg_domain_task.Task"
                         }
                     },
                     "404": {
@@ -107,7 +107,7 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "task.Task": {
+        "todoApi-go_pkg_domain_task.Task": {
             "type": "object",
             "properties": {
                 "completed": {
